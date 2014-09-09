@@ -1,0 +1,3 @@
+----------LOG FILE HAS BEEN CREATED-----------
+--Error Log File has been Created
+Planet Planet has been initialized

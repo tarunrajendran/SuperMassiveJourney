@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww15340\viewh22780\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 **notes\
+basically, button1 = movement, button2 = attack\
+energy and enemy health bars have bars under them in a darker color. the bright bars in front indicate the amount of energy that would be used \
+\
+\
+\
+if button1 has clicked a player ship\
+	\
+	display ship health/energy bars\
+	track which cell the mouse is over\
+		display 30% opacity ship sprite at that cell\
+		if ship cannot move to cell\
+			display attack range indicators over sprite to indicate it cannot move there\
+	calculate ship energy usage if ship moved to the cell under the mouse\
+		ship energy usage = abs(mouseCellX-shipX+mouseCellY-shipY)\
+		shorten bright energy bar to represent ship energy left if movement is executed\
+	\
+	listen for button1 or button2 click\
+\
+	if button1 clicks empty space\
+		if ship can move to space, move ship to space\
+		shorten dark energy bar to match bright energy bar length\
+		change energy value and ship position\
+		play movement animation\
+	if button1 or button2 clicks another player ship\
+		select the clicked ship instead\
+	if button1 or button2 clicks the end turn button\
+		end turn\
+	if button1 clicks an enemy ship or debris\
+		do nothing\
+\
+if button2 has clicked a player ship\
+	\
+	display ship attack range using transparent colored overlays\
+\
+	listen for button1 or button2 click\
+\
+	if button2 clicks an enemy ship\
+\
+		display attack slider above health/energy bars\
+\
+		listen for button1 or button2 click\
+\
+		if button2 clicks and drags the attack slider\
+			adjust attack slider graphic\
+			adjust attack slider value\
+			adjust bright energy bar and bright enemy health bar\
+		if button2 clicks the same enemy ship again and the attack slider value >0\
+			adjust dark energy bar and dark enemy health bar\
+			change energy value and enemy ship health\
+			play attack animation\
+		if button2 clicks another enemy ship\
+			change targeted ship to enemy ship\
+		if button1 or button2 clicks a player ship\
+			select the clicked ship instead\
+\
+	if button1 or button2 clicks a player ship\
+		select the clicked ship instead\
+	if button1 or button2 clicks the end turn button\
+		end turn\
+	if button2 clicks empty space or debris\
+		do nothing}

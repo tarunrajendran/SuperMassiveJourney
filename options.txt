@@ -1,0 +1,3 @@
+music:50
+sfx:100
+cheatwin:false
